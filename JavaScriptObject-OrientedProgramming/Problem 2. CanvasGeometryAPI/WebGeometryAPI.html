@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/WebGeometryAPI%20.css"/>
+    <title>Web Geometry API </title>
+</head>
+<body>
+    <header>
+        <h1>Web Geometry API </h1>
+    </header>
+
+    <main>
+        <section class="left-section">
+            <label for="xInput">X:</label> <input id="xInput" type="number"/>
+            <label for="yInput">Y:</label> <input id="yInput" type="number"/>
+            <label for="colorInput">Color</label> <input id="colorInput" type="color"/>
+            <label for="shapeInput">Shape</label>
+            <select name="shape" id="shapeInput">
+                <option value="point" selected>Point</option>
+                <option value="circle">Circle</option>
+                <option value="triangle">Triangle</option>
+                <option value="rectangle">Rectangle</option>
+                <option value="segment">Segment</option>
+            </select>
+
+            <!--Addditional sections-->
+
+            <!--Circle-->
+            <div id="circleAdditionalInformation" class="additionalInformation">
+                <label for="radiusInput">Radius: </label> <input id="radiusInput" type="number"/>
+            </div>
+
+            <!--Point-->
+            <div id="pointAdditionalInformation" class="additionalInformation">
+                <!--Role: clear the additional-->
+                <!--information div when point option is selected-->
+            </div>
+
+            <!--Triangle-->
+            <div id="triangleAdditionalInformation" class="additionalInformation">
+                <label for="trianglePointBXInput">Point B - X: </label> <input id="trianglePointBXInput" type="number"/>
+                <label for="trianglePointBYInput">Point B - Y: </label> <input id="trianglePointBYInput" type="number"/>
+                <label for="trianglePointCXInput">Point C - X: </label> <input id="trianglePointCXInput" type="number"/>
+                <label for="trianglePointCYInput">Point C - Y: </label> <input id="trianglePointCYInput" type="number"/>
+            </div>
+
+            <!--Rectangle-->
+            <div id="rectangleAdditionalInformation" class="additionalInformation">
+                <label for="widthInput">Width: </label> <input id="widthInput" type="number"/>
+                <label for="heightInput">Height: </label> <input id="heightInput" type="number"/>
+            </div>
+
+            <!--Segment-->
+            <div id="segmentAdditionalInformation" class="additionalInformation">
+                <label for="segmentPointBXInput">Point B - X: </label> <input id="segmentPointBXInput" type="number"/>
+                <label for="segmentPointBYInput">Point B - Y: </label> <input id="segmentPointBYInput" type="number"/>
+            </div>
+
+            <textarea name="output" id="output" cols="50" rows="10" class="text-area"></textarea>
+            <div class="buttons">
+                <input type="image" src="images/upArrow.png" class="arrow" id="up"/>
+                <input type="image" src="images/downArrow.png" class="arrow" id="down"/>
+                <button class="remove" id="remove">Remove</button>
+            </div>
+            <button class="add" id="add">Add</button>
+        </section>
+        <section class="right-section" id="right-section">
+            <canvas id="shapes-canvas" width="498px" height="318px"></canvas>
+        </section>
+    </main>
+
+
+    <script src="scripts/libs/require.js" data-main="scripts\app\app"></script>
+    <script src="CommonFunctions/extends.js"></script>
+    <script src="CommonFunctions/validateProperty.js"></script>
+    <script src="CommonFunctions/getCanvas.js"></script>
+    <script src="CommonFunctions/functionFirstInArray.js"></script>
+</body>
+</html>
